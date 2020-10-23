@@ -4,16 +4,16 @@
 int main()
 {
 	int mas[10];
+	int* a = mas;
 	printf("Enter ten numbers: \n");
 	for (int i = 0; i < 10; i++)
 	{
-		scanf("%d", &mas[i]);
+		if (scanf("%d", &mas[i]) != 1)
+			return printf("Not a number");
 	}
-	delLocal(mas);
+	int* m;
+	m = delLocal(a);
 	printf("Result: \n");
-	for (int i = 0; i < 10; i++)
-	{
-		printf("%d ", mas[i]);
-	}
+	OutMas(m);
 	return 0;
 }

@@ -1,18 +1,28 @@
-void delLocal(int mas[10])
+int* delLocal(int *a)
 {
-	int i = 0, n = 0;
-	int mas2[10] = { 0 };
-	while (i < 10)
+	int static mas2[10000] = { 0 };
+	int* c = mas2;
+	for(int i = 0; i < 10; i++ )
 	{
-		if (!(mas[i] < mas[i - 1] && mas[i] < mas[i + 1] && i != 9 && i != 0
-			|| i == 0 && mas[i] < mas[i + 1]
-			|| i == 9 && mas[i] < mas[i - 1]))
+		if (!(*a < *(a - 1) && *a < *(a + 1) && i != 9 && i != 0
+			|| i == 0 && *a < *(a + 1)
+			|| i == 9 && *a < *(a - 1)))
 		{
-			mas2[n] = mas[i];
-			n++;
+			*c = *a;
+			c++;
 		}
-		i++;
+		a++;
 	}
-	for (int j = 0; j < 10; j++)
-		mas[j] = mas2[j];
+	static int* b;
+	b = mas2;
+	return b;
+}
+
+void OutMas(int* a)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d ", *a);
+		a++;
+	}
 }

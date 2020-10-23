@@ -1,4 +1,5 @@
 #pragma once
 #include <stdio.h>
 
-void delLocal(int mas[10]);
+int * delLocal(int mas[10]);
+void OutMas(int* b);
