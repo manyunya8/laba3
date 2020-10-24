@@ -1,8 +1,10 @@
+#include <stdio.h>
+
 int* delLocal(int *a)
 {
-	int static mas2[10] = { 0 };
-	int* c = mas2;
-	for(int i = 0; i < 10; i++ )
+	int static arr2[10] = { 0 };
+	int* c = arr2;
+	for(int i = 0; i < 10; i++, a++)
 	{
 		if (!(*a < *(a - 1) && *a < *(a + 1) && i != 9 && i != 0
 			|| i == 0 && *a < *(a + 1)
@@ -11,18 +13,24 @@ int* delLocal(int *a)
 			*c = *a;
 			c++;
 		}
-		a++;
 	}
 	static int* b;
-	b = mas2;
+	b = arr2;
 	return b;
 }
 
-void OutMas(int* a)
+int inArr(int* a)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 10; i++, a++)
 	{
-		printf("%d ", *a);
-		a++;
+		if (scanf("%d", a) != 1)
+			return 1;
 	}
+	return 0;
+}
+
+void outArr(int* a)
+{
+	for (int i = 0; i < 10; i++, a++)
+		printf("%d ", *a);
 }
