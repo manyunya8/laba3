@@ -14,9 +14,8 @@ int* delLocal(int *a)
 			c++;
 		}
 	}
-	static int* b;
-	b = arr2;
-	return b;
+	c = arr2;
+	return c;
 }
 
 int inArr(int* a)
