@@ -1,6 +1,6 @@
 int* delLocal(int *a)
 {
-	int static mas2[10000] = { 0 };
+	int static mas2[10] = { 0 };
 	int* c = mas2;
 	for(int i = 0; i < 10; i++ )
 	{
