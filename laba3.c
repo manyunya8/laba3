@@ -21,6 +21,7 @@ int* delLocal(int *a)
 
 int inArr(int* a)
 {
+	printf("Enter ten numbers: \n");
 	for (int i = 0; i < 10; i++, a++)
 	{
 		if (scanf("%d", a) != 1)
@@ -31,6 +32,7 @@ int inArr(int* a)
 
 void outArr(int* a)
 {
+	printf("Result: \n");
 	for (int i = 0; i < 10; i++, a++)
 		printf("%d ", *a);
 }
