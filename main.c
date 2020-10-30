@@ -6,7 +6,7 @@ int main()
 	int* a = arr;
 	int* m;
 	if (inArr(a) == 1)
-		return printf("Not a number!");
+		return printf("Not a number!\n");
 	m = delLocal(a);
 	outArr(m);
 	return 0;

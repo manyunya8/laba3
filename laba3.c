@@ -34,4 +34,5 @@ void outArr(int* a)
 	printf("Result: \n");
 	for (int i = 0; i < 10; i++, a++)
 		printf("%d ", *a);
+	printf("\n");
 }
