@@ -2,7 +2,7 @@
 
 int main()
 {
-	int arr[10];
+	int arr[SIZE];
 	int* a = arr;
 	int* m;
 	if (inArr(a) == 1)
