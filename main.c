@@ -1,13 +1,14 @@
 #include "laba3.h"
+#define SIZE 10
 
 int main()
 {
-	int arr[SIZE];
-	int* a = arr;
-	int* m;
-	if (inArr(a) == 1)
+	int local[SIZE] , nolocal[SIZE];
+	int* l = local;
+	int* n = nolocal;
+	if (inArr(l, SIZE) == 1)
 		return printf("Not a number!\n");
-	m = delLocal(a);
-	outArr(m);
+	delLocal(l, SIZE, n);
+	outArr(n, SIZE);
 	return 0;
 }

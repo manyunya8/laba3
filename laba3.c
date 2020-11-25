@@ -1,28 +1,28 @@
 #include <stdio.h>
-#define SIZE 10
 
-int* delLocal(int *a)
+int* delLocal(int *a, int size, int *b )
 {
-	int static arr2[SIZE] = { 0 };
-	int* c = arr2;
-	for(int i = 0; i < SIZE; i++, a++)
+	int count = 0;
+	for(int i = 0; i < size; i++, a++)
 	{
-		if (!(*a < *(a - 1) && *a < *(a + 1) && i != SIZE - 1 && i != 0
+		if (!(*a < *(a - 1) && *a < *(a + 1) && i != size - 1 && i != 0
 			|| i == 0 && *a < *(a + 1)
-			|| i == SIZE - 1  && *a < *(a - 1)))
+			|| i == size - 1  && *a < *(a - 1)))
 		{
-			*c = *a;
-			c++;
+			*b = *a;
+			b++;
+			count++;
 		}
 	}
-	c = arr2;
-	return c;
+	for (size; size > count; size--, b++)
+		*b = 0;
+	return count;
 }
 
-int inArr(int* a)
+int inArr(int* a, int size)
 {
-	printf("Enter ten numbers: \n");
-	for (int i = 0; i < SIZE; i++, a++)
+	printf("Enter %d numbers: \n", size);
+	for (int i = 0; i < size; i++, a++)
 	{
 		if (scanf("%d", a) != 1)
 			return 1;
@@ -30,10 +30,10 @@ int inArr(int* a)
 	return 0;
 }
 
-void outArr(int* a)
+void outArr(int* b, int size)
 {
 	printf("Result: \n");
-	for (int i = 0; i < SIZE; i++, a++)
-		printf("%d ", *a);
+	for (int i = 0; i < size; i++, b++)
+		printf("%d ", *b);
 	printf("\n");
 }

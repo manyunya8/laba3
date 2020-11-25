@@ -1,7 +1,6 @@
 #pragma once
 #include <stdio.h>
-#define SIZE 10
 
-int* delLocal(int* a);
-int inArr(int* a);
-void outArr(int* a);
+int* delLocal(int* a, int size, int* b);
+int inArr(int* a, int size);
+void outArr(int* b, int size);
