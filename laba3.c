@@ -2,12 +2,10 @@
 
 int delLocal(int *a, int size1, int *b, int size2 )
 {
-	if (size1 != size2)
+	if (size1 != size2 || size1 <= 0 || size2 <= 0)
 		return -1;
 	int size = size1;
 	int count = 0;
-	if (size == 0)
-		return 0;
 	*b = *a;
 	b++;
 	a++;

@@ -10,7 +10,7 @@ int main()
 		return printf("Not a number!\n");
 	
 	if(delLocal(a, SIZE, n, SIZE) == -1)
-		return printf("Different size");
+		return printf("Wrong size!");
 	outArr(n, SIZE);
 	return 0;
 }
