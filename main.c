@@ -4,11 +4,13 @@
 int main()
 {
 	int local[SIZE] , nolocal[SIZE];
-	int* l = local;
+	int* a = local;
 	int* n = nolocal;
-	if (inArr(l, SIZE) == 1)
+	if (inArr(a, SIZE) == 1)
 		return printf("Not a number!\n");
-	delLocal(l, SIZE, n);
+	
+	if(delLocal(a, SIZE, n, SIZE) == -1)
+		return printf("Different size");
 	outArr(n, SIZE);
 	return 0;
 }

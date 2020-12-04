@@ -1,18 +1,31 @@
 #include <stdio.h>
 
-int* delLocal(int *a, int size, int *b )
+int delLocal(int *a, int size1, int *b, int size2 )
 {
+	if (size1 != size2)
+		return -1;
+	int size = size1;
 	int count = 0;
-	for(int i = 0; i < size; i++, a++)
+	if (size == 0)
+		return 0;
+	*b = *a;
+	b++;
+	a++;
+	count++;
+	for(int i = 1; i < size - 1; i++, a++)
 	{
-		if (!(*a < *(a - 1) && *a < *(a + 1) && i != size - 1 && i != 0
-			|| i == 0 && *a < *(a + 1)
-			|| i == size - 1  && *a < *(a - 1)))
+		if (!(*a < *(a - 1) && *a < *(a + 1)))
 		{
 			*b = *a;
 			b++;
 			count++;
 		}
+	}
+	if (size != 1) 
+	{
+		*b = *a;
+		b++;
+		count++;
 	}
 	for (size; size > count; size--, b++)
 		*b = 0;
@@ -30,10 +43,12 @@ int inArr(int* a, int size)
 	return 0;
 }
 
-void outArr(int* b, int size)
+int outArr(int* b, int size)
 {
+	int i = 0;
 	printf("Result: \n");
-	for (int i = 0; i < size; i++, b++)
+	for (i; i < size; i++, b++)
 		printf("%d ", *b);
 	printf("\n");
+	return i;
 }
